@@ -1,0 +1,17 @@
+# Local Codex instructions and project context
+/AGENTS.md
+/agents.md
+/docs/
+
+# Local secrets (keep sanitized examples shareable)
+.env
+.env.*
+!.env.example
+
+# macOS metadata
+.DS_Store
+
+node_modules/
+dist/
+.vercel/
+*.tsbuildinfo
