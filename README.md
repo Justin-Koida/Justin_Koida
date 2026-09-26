@@ -1,6 +1,6 @@
 # Justin Koida — Personal Portfolio
 
-React, TypeScript, Vite, and Tailwind CSS. The starter has About Me, Timeline, and Experience / Projects tabs. Personal content is in `src/content/site.ts` and currently uses placeholders.
+React, TypeScript, Vite, and Tailwind CSS. The scrolling portfolio has an interactive career voyage, About Me, and Projects sections. Select an island for full-screen experience details; Escape or Back returns to the map. Personal content is in `src/content/site.ts` and includes résumé-based internship, research, and project details.
 
 ## Local development
 
