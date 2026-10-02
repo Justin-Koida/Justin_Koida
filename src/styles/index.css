@@ -148,3 +148,99 @@ a.profile-card:hover { border-color: #61796b; background: #e8edde; }
 .chess-section > p:not(.eyebrow):not(.profile-pending) { font-size: 14px; }
 .chess-section a { display: inline-block; margin-top: 14px; font-size: 13px; }
 @media (max-width: 700px) { .logbook { grid-template-columns: 1fr; }.log-biography { border-right: 0; border-bottom: 1px solid #c9c3ad; padding: 28px 24px; }.log-connections { padding: 28px 24px; }.log-mark { display: none; } }
+
+/* Illustrated career sea: quiet water, crisp artwork, opaque reading surfaces. */
+.voyage { background: linear-gradient(180deg, #e6f4f1 0%, #b9e0e2 24%, #82c3d1 65%, #b4dcdf 100%); }
+.voyage-heading { padding-bottom: 32px; }
+.voyage-toolbar { max-width: 1100px; margin: auto; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid #63959c55; font-size: 13px; }
+.view-switch { display: flex; border: 1px solid #719ca3; background: #edf7f3; padding: 4px; border-radius: 30px; gap: 4px; }
+.view-switch button { border: 0; background: transparent; padding: 9px 17px; border-radius: 24px; color: #294c52; font-size: 12px; }
+.view-switch button[aria-pressed="true"] { background: #294f59; color: #fff9e8; }
+.map { height: 1900px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='110' viewBox='0 0 160 110'%3E%3Cpath d='M12 30q8 7 16 0t16 0M91 82q8 7 16 0t16 0' fill='none' stroke='%23efffff' stroke-opacity='.35' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); background-size: 160px 110px; }
+.map[hidden] { display: none; }
+.voyage-route { color: #3b788b; }
+.ship { filter: drop-shadow(0 6px 3px #28617b30); }
+.ship-bob { animation: ship-bob 4s ease-in-out infinite; }
+.ship-sails { transform-origin: -12px 18px; animation: sail-billow 4s ease-in-out infinite; }
+.ship-flag { transform-origin: -12px -60px; animation: flag-flutter 2.6s ease-in-out infinite; }
+.ship-wake { animation: wake 4s ease-in-out infinite; }
+.island-stop { width: 350px; transform: translate(-50%, -22%); }
+.island { padding: 0; border-radius: 18px; }
+.island-land, .stop-1 .island-land, .stop-2 .island-land, .stop-3 .island-land { display: block; width: 280px; height: 168px; border: 0; background: none; box-shadow: none; border-radius: 0; transform: none; margin: 0 auto 6px; }
+.island-art { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 3px #33748520); transition: transform 220ms ease; }
+.island-number { top: 121px; left: 126px; width: 28px; height: 28px; display: grid; place-content: center; background: #fff6d9; border: 1px solid #a58e61; border-radius: 50%; font-size: 13px; color: #365550; }
+.island:hover .island-land, .island:focus-visible .island-land { outline: none; }
+.island:hover .island-art, .island:focus-visible .island-art { transform: translateY(-5px); }
+.island-label { padding: 20px 22px 16px; background: #fffbef; border: 1px solid #9dbabd; border-bottom: 0; border-radius: 14px 14px 0 0; }
+.island-label strong { font-size: 25px; }
+.island-preview, .island.preview-dismissed .island-preview { position: static; display: block; visibility: visible; padding: 0 22px 22px; background: #fffbef; border: 1px solid #9dbabd; border-top: 0; border-radius: 0 0 14px 14px; font-size: 13px; text-align: left; box-shadow: 0 8px 0 #467c8712; margin: 0; }
+.enter-label { font-weight: 700; margin: 12px 0 0; }
+.island-label::after { content: ''; width: 40px; border-top: 1px solid #d4d8c8; margin-top: 16px; }
+.island-ripple { animation: shore 5s ease-in-out infinite; transform-origin: 150px 144px; }
+.stop-1 .island-ripple { animation-delay: -1s; }.stop-2 .island-ripple { animation-delay: -3s; }
+.experience-list { max-width: 1000px; padding: 24px 32px 64px; margin: auto; list-style: none; }
+.experience-list > li { display: flex; gap: 24px; padding: 32px; margin: 16px 0; background: #fffbef; border: 1px solid #97b7ba; border-radius: 14px; }
+.list-number { font: 28px Georgia, serif; color: #477c83; }.experience-list h2 { font-size: 28px; margin: 8px 0; }.list-role { font-weight: 600; }.experience-list ul { padding-left: 20px; font-size: 14px; }.experience-list li li { margin: 12px 0; }.experience-list a { font-size: 13px; font-weight: 600; }
+.experience-pagination { max-width: 850px; margin: auto; padding: 0 35px 40px; display: flex; justify-content: space-between; gap: 16px; }
+.experience-pagination button { border: 1px solid #879b8f; padding: 12px 16px; background: transparent; color: inherit; border-radius: 6px; font-size: 13px; }.experience-pagination button:disabled { opacity: .4; cursor: default; }
+@keyframes ship-bob { 0%,100% { transform: translateY(-3px) rotate(-2deg); } 50% { transform: translateY(3px) rotate(2deg); } }
+@keyframes sail-billow { 0%,100% { transform: skewY(-2deg); } 50% { transform: skewY(2deg); } }
+@keyframes flag-flutter { 50% { transform: scaleX(.9) skewY(5deg); } }
+@keyframes wake { 50% { opacity: .4; } }
+@keyframes shore { 50% { transform: scale(1.035); opacity: .45; } }
+@media (max-width: 700px) {
+  .voyage-toolbar { padding: 16px 20px; flex-direction: column; gap: 12px; align-items: start; }
+  .map { height: 2250px; }
+  .island-stop { width: min(300px, 80vw); }
+  .stop-0, .stop-2 { left: 43%; }.stop-1, .stop-3 { left: 57%; }
+  .island-land, .stop-1 .island-land, .stop-2 .island-land, .stop-3 .island-land { width: 240px; max-width: 100%; height: 144px; }
+  .island-number { top: 104px; left: calc(50% - 14px); }
+  .island-label { padding: 16px 18px 12px; }.island-label strong { font-size: 22px; }.island-preview { padding: 0 18px 18px; font-size: 12px; }
+  .experience-list { padding: 10px 16px 40px; }.experience-list > li { padding: 22px 18px; gap: 14px; }.experience-list h2 { font-size: 24px; }
+  .experience-pagination { padding: 0 24px 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ship-bob, .ship-sails, .ship-flag, .ship-wake, .island-ripple { animation: none; }
+  .island-art { transition: none; }.island:hover .island-art { transform: none; }
+}
+
+/* Anime-adventure ink, cel shadows, and an unobstructed sailing channel. */
+.voyage { background: linear-gradient(180deg, #e4f6f3 0%, #9adfe7 25%, #65c7dd 65%, #b2e9e9 100%); }
+.voyage-route { z-index: 3; color: #267b95; }
+.island-stop { width: 30%; transform: translate(-50%, -22%); }
+.stop-0, .stop-2 { left: 19%; }.stop-1, .stop-3 { left: 81%; }
+.island-art { filter: drop-shadow(0 7px 0 #22678324); }
+.island-label { border: 2px solid #355563; border-radius: 14px; box-shadow: 4px 5px 0 #28556526; background: #fff9e5; }
+.island-label strong { font-weight: 700; }
+.island-label::after { display: none; }
+.island-preview, .island.preview-dismissed .island-preview { position: absolute; top: 100%; left: 0; width: 100%; margin: 0; padding: 16px 20px; visibility: hidden; opacity: 0; border: 2px solid #355563; border-radius: 12px; background: #fffdf3; box-shadow: 4px 5px 0 #28556526; transition: opacity 150ms ease; }
+.island:not(.preview-dismissed):hover .island-preview, .island:not(.preview-dismissed):focus-visible .island-preview { visibility: visible; opacity: 1; }
+.is-travelling .island .island-preview { visibility: hidden; opacity: 0; }
+@media (max-width: 800px) {
+  .map { height: 2350px; }
+  .island-stop { width: 65%; }
+  .stop-0, .stop-1, .stop-2, .stop-3 { left: 64%; }
+  .island-land, .stop-1 .island-land, .stop-2 .island-land, .stop-3 .island-land { width: min(240px, 100%); height: 144px; }
+  .island-label { padding: 14px 12px; }.island-label strong { font-size: 21px; }
+  .island-preview { font-size: 12px; padding: 14px; }
+  .map-key { left: 33%; }.compass { display: none; }
+}
+@media (hover: none) { .island:not(:focus-visible) .island-preview { visibility: hidden; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .island-preview { transition: none; } }
+
+/* Sunny hand-inked adventure palette, original ship and island designs. */
+.voyage { background: linear-gradient(180deg, #ecf9f6 0%, #86dcf1 22%, #3aaddb 62%, #8fdee9 100%); }
+.voyage-heading h1 { color: #243c52; text-shadow: 2px 3px 0 #fff8df; }
+.voyage-heading h1 em { color: #ae4937; }
+.island-label { border-color: #294459; background: #fff4d4; box-shadow: 5px 6px 0 #2649603d; }
+.island-art { filter: drop-shadow(0 8px 0 #1e659044); }
+.island-stop { width: 28%; }.stop-0, .stop-2 { left: 18%; }.stop-1, .stop-3 { left: 82%; }
+.site-header { border-bottom: 2px solid #324f60; background: #fff8e8f5; }
+.view-switch { border: 2px solid #324f60; background: #fff4d4; }.view-switch button[aria-pressed="true"] { background: #ad4836; }
+.enter-label { color: #9a392b; }.ship { filter: drop-shadow(0 5px 0 #20537538); }
+@media (max-width: 800px) {
+ .island-stop { width: 56%; }
+ .stop-0, .stop-1, .stop-2, .stop-3 { left: 70%; }
+ .island-label strong { font-size: 20px; }
+ .map { height: 2500px; }
+}
